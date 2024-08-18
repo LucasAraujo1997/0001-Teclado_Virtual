@@ -6,7 +6,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  height: 98vh;
+  height: 100vh;
   width: 100vw;
   background-color: rgb(234, 234, 234);
 }
@@ -23,12 +23,18 @@ article {
 }
 button {
   margin: 1px;
-  padding: 10px 11px;
+  height: 35px;
+  width: 28px;
   border-radius: 5px;
   box-shadow: 1px 1px 1px black;
   border: none;
 }
-
+.space{
+  width: 65px;
+}
+.enter{
+  width: 50px;
+}
 #display {
   display: flex;
   flex-direction: column;

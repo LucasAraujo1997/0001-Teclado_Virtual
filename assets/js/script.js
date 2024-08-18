@@ -1,6 +1,7 @@
 (function () {
   const $txtDisplay = document.querySelector(".txtDisplay");
   const $btns = document.querySelectorAll("button");
+  const $letters = document.querySelectorAll(".letter");
 
   let capslock = false;
   let count = 0;
@@ -27,8 +28,15 @@
           btn.style.color = "grey";
         }
         count++;
-        console.log(count);
         capslock = !capslock;
+
+        $letters.forEach((letterbtn) => {
+          if (capslock) {
+            letterbtn.textContent = letterbtn.textContent.toUpperCase();
+          } else {
+            letterbtn.textContent = letterbtn.textContent.toLowerCase();
+          }
+        });
       } else {
         let char = btn.innerHTML;
         if (capslock && btnClass === "letter") {
@@ -39,7 +47,5 @@
     });
   });
 
-  window.addEventListener('keypress', ()=>{
-    
-  })
+  window.addEventListener("keypress", () => {});
 })();
