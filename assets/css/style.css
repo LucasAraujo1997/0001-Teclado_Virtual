@@ -35,14 +35,31 @@ button {
 .enter{
   width: 50px;
 }
+
 #display {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 70%;
   padding: 10px;
+  word-break: break-all;
 }
-#display h1 {
+.header-display{
+  display: flex;
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-btn-display-edit{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.header-btn-display-edit button{
+  height: 30px;
+}
+.header-display h1 {
   font-size: 24px;
   text-decoration: underline;
   margin-bottom: 10px;
@@ -66,3 +83,7 @@ button {
   height: 30%;
 }
 
+/* class for align text */
+.txt-left{
+  text-align: left;
+}

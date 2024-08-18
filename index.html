@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
 
     <title>Teclado Virtual</title>
   </head>
@@ -19,7 +19,14 @@
     <main>
       <article>
         <section id="display">
-          <h1>Texto:</h1>
+          <div class="header-display">
+            <h1>Texto:</h1>
+            <div class="header-btn-display-edit">
+              <button class="ed-left">⟸</button>
+              <button class="ed-middle">⇔</button>
+              <button class="ed-right">⟹</button>
+            </div>
+          </div>
           <div class="txtDisplay"></div>
         </section>
         <section id="teclado">
@@ -59,7 +66,6 @@
             <button type="button" class="letter">l</button>
           </div>
           <div id="line4">
-            
             <button type="button" class="letter">z</button>
             <button type="button" class="letter">x</button>
             <button type="button" class="letter">c</button>
@@ -82,7 +88,6 @@
         </section>
       </article>
     </main>
-    
 
     <script src="./assets/js/script.js"></script>
   </body>

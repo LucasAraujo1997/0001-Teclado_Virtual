@@ -6,8 +6,8 @@
   let capslock = false;
   let count = 0;
 
-  const $cursor = document.createElement("span");
-  $cursor.className = "cursor";
+  // const $cursor = document.createElement("span");
+  // $cursor.className = "cursor";
 
   $btns.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -19,6 +19,12 @@
         $txtDisplay.innerHTML += " ";
       } else if (btnClass === "enter") {
         $txtDisplay.innerHTML += "<br/>";
+      } else if (btnClass === "ed-left") {
+        $txtDisplay.style.textAlign = "left";
+      } else if (btnClass === "ed-middle") {
+        $txtDisplay.style.textAlign = "center";
+      } else if (btnClass === "ed-right") {
+        $txtDisplay.style.textAlign = "right";
       } else if (btnClass === "capslock") {
         if (count % 2 === 0) {
           btn.style.backgroundColor = "grey";
@@ -47,5 +53,18 @@
     });
   });
 
-  window.addEventListener("keypress", () => {});
+  window.addEventListener("keydown", (e) => {
+    console.log(e.key);
+    if (e.key === "Backspace") {
+      $txtDisplay.innerHTML = $txtDisplay.innerHTML.slice(0, -1);
+    } else if (e.key === "Enter") {
+      $txtDisplay.innerHTML += "<br/>";
+    } else if (e.key.length === 1) {
+      let char = e.key
+      if(capslock){
+        char = char.toUpperCase();
+      }
+      $txtDisplay.innerHTML += char;
+    }
+  });
 })();
