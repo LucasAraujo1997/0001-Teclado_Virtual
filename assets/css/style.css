@@ -3,12 +3,30 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root{
+  --primary-bg-color:rgb(234, 234, 234);
+  --text-color:rgb(17, 17, 17);
+  --text-display-bg:white;
+  --btn-bg-color: rgb(242, 242, 242);
+  --keybord-bg-color:rgb(178, 178, 178);
+  --thema-icon-color:grey;
+}
 
+.dark-mode{
+  --primary-bg-color:rgb(79, 79, 79);
+  --text-color:rgb(241, 241, 241);
+  --text-display-bg:rgb(107, 107, 107);
+  --btn-bg-color: rgb(122, 122, 122);
+  --keybord-bg-color:rgb(70, 70, 70);
+  --thema-icon-color:rgb(231, 230, 230);
+}
 body {
   font-family: "Roboto", sans-serif;
   height: 100vh;
   width: 100vw;
-  background-color: rgb(234, 234, 234);
+  background-color: var(--primary-bg-color);
+  color: var(--text-color);
+  transition: all 0.1 ease;
 }
 main {
   height: 100%;
@@ -22,17 +40,20 @@ article {
   justify-content: space-between;
 }
 button {
+  font-size: 16px;
   margin: 1px;
   height: 35px;
   width: 28px;
   border-radius: 5px;
   box-shadow: 1px 1px 1px black;
   border: none;
+  background-color: var(--btn-bg-color);
+  color: var(--text-color);
 }
-.space{
+.space {
   width: 65px;
 }
-.enter{
+.enter {
   width: 50px;
 }
 
@@ -44,28 +65,52 @@ button {
   padding: 10px;
   word-break: break-all;
 }
-.header-display{
+.header-display {
   display: flex;
   width: 100%;
   height: 40px;
   align-items: center;
   justify-content: space-between;
 }
-.header-btn-display-edit{
+.header-btn-display-edit {
   display: flex;
   align-items: center;
   gap: 5px;
 }
-.header-btn-display-edit button{
+.header-btn-display-edit button {
   height: 30px;
 }
+.thema {
+  height: 20px;
+  width: 50px;
+  box-shadow: none;
+  background: var(--text-display-bg);
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.thema-icon {
+  height: 20px;
+  width: 20px;
+  background-color: var(--thema-icon-color);
+  border-radius: 10px;
+  transition: all 0.1s ease;
+}
+.thema-icon-dark {
+  transform: translateX(30px);
+}
+.thema-icon-light {
+  transform: translateX(0px);
+}
+
 .header-display h1 {
   font-size: 24px;
   text-decoration: underline;
   margin-bottom: 10px;
 }
 #display .txtDisplay {
-  background-color: white;
+  background-color:var(--text-display-bg);
   height: 90%;
   padding: 5px;
   white-space: pre-wrap;
@@ -74,7 +119,7 @@ button {
 }
 
 #teclado {
-  background-color: grey;
+  background-color: var(--keybord-bg-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -84,6 +129,3 @@ button {
 }
 
 /* class for align text */
-.txt-left{
-  text-align: left;
-}
